@@ -48,7 +48,6 @@ const compute = () => {
                     break;
                 
                 case 3:
-                    console.log('333333333333')
                     valuesInInstruction = 2;
                     indexStore = input[count + 1];
                     input[indexStore] = inputInstruction;
@@ -58,7 +57,6 @@ const compute = () => {
                     const indexOutput = input[count + 1];
                     valuesInInstruction = 2;
                     output = input[indexOutput];
-                    console.log('output!', output);
                     count += valuesInInstruction;
                     break;
                 case 5:
@@ -66,15 +64,11 @@ const compute = () => {
                     indexParameter2 = input[count + 2];
                     value1 = !!parameter1Mode ? indexParameter1 : input[indexParameter1];
                     value2 = !!parameter2Mode ? indexParameter2 : input[indexParameter2];
-                    
-                    console.log(value1, typeof value1);
-                    
+                                        
                     if (value1 !== 0) {
-                        console.log('opCodeString: ', opCodeString, 'index1: ', indexParameter1, ', mode1: ', parameter1Mode, ', value1: ', value1, 'index2: ', indexParameter2, ', mode2: ', parameter2Mode, ', value2: ', value2);
                         valuesInInstruction = value2;
                         count = valuesInInstruction;
                     } else {
-                        console.log('5, zero, defaults to 3', );
                         valuesInInstruction = 3;
                         count += valuesInInstruction;
                     }
